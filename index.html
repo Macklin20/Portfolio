@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Macklin Enico Salex - Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<style>.flip-card-back {
+  background: linear-gradient(135deg, #2e003e, #6a0dad, #f3e6ff);
+  color: #ffffff;
+  transform: rotateY(180deg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.05);
+  background-size: 200% 200%;
+  animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.flip-card-back h1 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.skills-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.skills-column h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+}
+
+.skills-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-column li {
+  font-size: 1.05rem;
+  padding: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.skills-column li:hover {
+  color: #e0b3ff;
+  transform: translateX(5px);
+}
+
+.flip-card-back .buttons {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.flip-card-back button {
+  padding: 10px 24px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #6a0dad;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.flip-card-back button:hover {
+  background-color: #eeeeee;
+  transform: scale(1.05);
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h2 style="font-size: xx-large;padding-left:35px;">
+  <a href="index.html" style="text-decoration: none; color: #6a0dad;">Macklin Enico Salex</a>
+</h2>
+<nav>
+   
+      <a href="projects.html">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="achivements.html">Achievements</a>
+    <a href="publications.html">Publications</a>
+    <a href="index.html#contactdetails">Contact</a>
+  </nav>
+</header>
+
+<div class="flip-card">
+  <div class="flip-card-inner" id="cardInner">
+    <!-- Front Side -->
+    <div class="flip-card-front">
+      <div class="text">
+        <h1>Building Smarter Systems with Smarter Code.</h1>
+        <p>Hi, I'm Macklin — a final-year B.Tech student in AI & Data Science. I specialize in building intelligent tools, crafting clean web experiences, and solving real-world problems through creativity and code.</p>
+        <div class="dynamic-skill" id="skillText"></div>
+        <div class="buttons">
+          <button onclick="flipCard()">Know More</button>
+          
+        </div>
+      </div>
+      <img class="profile-img" src="Myimage.jpg" alt="Macklin Profile Image">
+    </div>
+
+    <!-- Back Side -->
+    <div class="flip-card-back">
+  <div class="text">
+    
+    <div class="skills-container">
+      <div class="skills-column">
+        <h2>Technical Skills</h2>
+        <ul>
+          <li>Java, Python</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>SQL & DBMS</li>
+          <li>Figma - UI & UX</li>
+          <li>Blender - 3D modelling</li>
+
+        </ul>
+      </div>
+      <div class="skills-column">
+        <h2>Soft Skills</h2>
+        <ul>
+          <li>Communication</li>
+          <li>Team Leadership</li>
+          <li>Problem-Solving</li>
+          <li>Creativity</li>
+        </ul>
+      </div>
+    </div>
+    <div class="buttons">
+      <button onclick="flipCard()">Back</button>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<footer id="contactdetails">
+  <div class="footer-container">
+    <p>&copy; 2025 Macklin Enico Salex</p>
+    <div class="footer-links">
+      <a href="mailto:macklinenicosalex@gmail.com" target="_blank">Email</a>
+      <a href="https://www.linkedin.com/in/macklin-p-7b9a71267/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Macklin20" target="_blank">GitHub</a>
+      
+    </div>
+  </div>
+</footer>
+
+<script>
+  const roles = ["Web Developer 💻", "UI/UX Designer 🎨", "Database Architect 🗃️"];
+  const skillText = document.getElementById("skillText");
+  let index = 0;
+  let char = 0;
+  let typing = true;
+
+  function typeLoop() {
+    if (typing) {
+      if (char < roles[index].length) {
+        skillText.textContent += roles[index].charAt(char);
+        char++;
+        setTimeout(typeLoop, 100);
+      } else {
+        typing = false;
+        setTimeout(typeLoop, 1500);
+      }
+    } else {
+      if (char > 0) {
+        skillText.textContent = roles[index].substring(0, char - 1);
+        char--;
+        setTimeout(typeLoop, 40);
+      } else {
+        typing = true;
+        index = (index + 1) % roles.length;
+        setTimeout(typeLoop, 300);
+      }
+    }
+  }
+
+  typeLoop();
+
+  function flipCard() {
+    const card = document.querySelector('.flip-card');
+    card.classList.toggle('flipped');
+  }
+</script>
+
+</body>
+</html>
