@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume - Macklin Enico Salex</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+
+    .pdf-viewer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      height: calc(100vh - 100px);
+    }
+
+    iframe {
+      width: 80%;
+      height: 100%;
+      border: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+ <header>
+   <a href="index.html" style="text-decoration: none;" class="logo">Macklin Enico Salex</a>
+
+    <nav>
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="achivements.html">Achievements</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<div class="pdf-viewer">
+  <iframe src="Myresume.pdf"></iframe>
+</div>
+<script>// Burger menu toggle
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      burger.classList.toggle('toggle');
+    });</script>
+</body>
+</html>

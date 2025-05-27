@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Publications - Macklin Enico Salex</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .publications-container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    .publication {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(106, 13, 173, 0.1);
+    }
+
+    .publication h3 {
+      margin-bottom: 10px;
+      color: #6a0dad;
+    }
+
+    .publication p {
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .publication a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #530da8;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+   <a href="index.html" style="text-decoration: none;" class="logo">Macklin Enico Salex</a>
+
+    <nav>
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="achivements.html">Achievements</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section class="publications-container">
+ 
+
+  <div class="publication">
+    <h3>Green Grocery - Connecting farmers with local markets</h3>
+    <p>Green Grocery is a MERN stack-based digital platform that connects farmers directly with vendors, eliminating middlemen and improving market access. It features multilingual support, voice input, real-time chat, and secure payments via Razorpay to enhance usability for rural users. The platform boosts digital engagement, simplifies agri-commerce, and supports inclusive growth in the agricultural sector.
+</p>
+    <!-- <p>This paper explores the design and implementation of AI systems that adapt to individual learning styles to improve retention and engagement.</p> -->
+    <a href="IJCRT25A4677-1.pdf" target="_blank">View Publication</a>
+  </div>
+
+  <div class="publication">
+    <h3>Detection of DeepFake Technology</h3>
+    <p>Deepfake Detection Technology
+Presented a thesis on detecting
+deepfake content using LSTM, CNN,
+and RNN to analyze frame-level
+inconsistencies.  Proposed a proactive approach to
+prevent fraudulent uploads on social
+media platforms.</p>
+    <!-- <p>Published in the Journal of Emerging Technologies, this research presents a novel AR education platform that merges virtual content with physical learning spaces.</p> -->
+    <a href="DEEPFAKE TECHNOLOGY  (1).pdf" target="_blank">View Publication</a>
+  </div>
+
+  <!-- Add more publication entries similarly -->
+</section>
+<script>
+  // Burger menu toggle
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      burger.classList.toggle('toggle');
+    });
+</script>
+</body>
+</html>

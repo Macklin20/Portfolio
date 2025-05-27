@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Macklin Enico Salex - Portfolio</title>
+  <style>
+    <!-- * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3e8ff;
+      color: #333;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #6a0dad;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #6a0dad;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f3e6ff;
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      width: 25px;
+      height: 20px;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .burger div {
+      background-color: #6a0dad;
+      height: 3px;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        right: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        background: #2e003e;
+        flex-direction: column;
+        align-items: center;
+        width: 220px;
+        padding-top: 40px;
+        gap: 30px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        border-radius: 0 0 0 20px;
+        box-shadow: -4px 0 15px rgba(106, 13, 173, 0.5);
+        z-index: 1000;
+      }
+
+      nav ul.active {
+        transform: translateX(0);
+      }
+
+      nav ul li a {
+        color: #fff;
+        font-size: 1.2rem;
+      }
+
+      .burger {
+        display: flex;
+      }
+    }
+
+    .burger.toggle div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .burger.toggle div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .burger.toggle div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    } -->
+
+    .flip-card {
+      background-color: transparent;
+      width: 90%;
+      max-width: 900px;
+      height: auto;
+      perspective: 1000px;
+      margin: 40px auto;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .flip-card-front {
+      background: white;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .flip-card-front h1 {
+      font-size: 2.2rem;
+      color: #6a0dad;
+      margin-bottom: 20px;
+    }
+
+    .flip-card-front p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .dynamic-skill {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #6a0dad;
+      margin-bottom: 20px;
+    }
+
+    .buttons button {
+      padding: 10px 24px;
+      font-size: 1rem;
+      background-color: #6a0dad;
+      color: #ffffff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .buttons button:hover {
+      transform: scale(1.05);
+    }
+
+    .profile-img {
+      margin-top: 20px;
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .flip-card-back {
+      background: linear-gradient(135deg, #2e003e, #6a0dad, #f3e6ff);
+      color: #ffffff;
+      transform: rotateY(180deg);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: gradientMove 3s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 20px;
+      justify-content: space-between;
+    }
+
+    .skills-column {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .skills-column h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 5px;
+    }
+
+    .skills-column li {
+      font-size: 1.05rem;
+      padding: 6px 0;
+    }
+
+    @media (max-width: 768px) {
+      .flip-card {
+        width: 100%;
+      }
+
+      .flip-card-front h1 {
+        font-size: 1.8rem;
+      }
+
+      .profile-img {
+        max-width: 90%;
+      }
+
+      .skills-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Macklin Enico Salex</div>
+    <nav>
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h1>Building Smarter Systems with Smarter Code.</h1>
+        <p>Hi, I'm Macklin — a final-year B.Tech student in AI & Data Science. I specialize in building intelligent tools, crafting clean web experiences, and solving real-world problems through creativity and code.</p>
+        <div class="dynamic-skill" id="skillText"></div>
+        <div class="buttons">
+          <button onclick="flipCard()">Know More</button>
+        </div>
+        <img class="profile-img" src="Myimage.jpg" alt="Macklin Profile Image">
+      </div>
+      <div class="flip-card-back">
+        <div class="skills-container">
+          <div class="skills-column">
+            <h2>Technical Skills</h2>
+            <ul>
+              <li>Java, Python</li>
+              <li>HTML, CSS, JavaScript</li>
+              <li>SQL & DBMS</li>
+              <li>Figma - UI & UX</li>
+              <li>Blender - 3D modelling</li>
+            </ul>
+          </div>
+          <div class="skills-column">
+            <h2>Soft Skills</h2>
+            <ul>
+              <li>Communication</li>
+              <li>Team Leadership</li>
+              <li>Problem-Solving</li>
+              <li>Creativity</li>
+            </ul>
+          </div>
+        </div>
+        <div class="buttons">
+          <button onclick="flipCard()">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      burger.classList.toggle('toggle');
+    });
+
+    const roles = ["Web Developer 💻"," Java Developer ☕", "UI/UX Designer 🎨", "Database Architect 📓"];
+    const skillText = document.getElementById("skillText");
+    let index = 0;
+    let char = 0;
+    let typing = true;
+
+    function typeLoop() {
+      if (typing) {
+        if (char < roles[index].length) {
+          skillText.textContent += roles[index].charAt(char);
+          char++;
+          setTimeout(typeLoop, 100);
+        } else {
+          typing = false;
+          setTimeout(typeLoop, 1500);
+        }
+      } else {
+        if (char > 0) {
+          skillText.textContent = roles[index].substring(0, char - 1);
+          char--;
+          setTimeout(typeLoop, 40);
+        } else {
+          typing = true;
+          index = (index + 1) % roles.length;
+          setTimeout(typeLoop, 300);
+        }
+      }
+    }
+
+    typeLoop();
+
+    function flipCard() {
+      const card = document.querySelector('.flip-card');
+      card.classList.toggle('flipped');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "project_id": "YOUR_NEW_PROJECT_ID",
+  "project_name": "Portfolio",
+  "features": {
+    "client": {
+      "directory": "."
+    }
+  }
+}

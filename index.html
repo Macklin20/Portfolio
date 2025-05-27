@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Macklin Enico Salex - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" style="text-decoration: none;" class="logo">Macklin Enico Salex</a>
+
+    <nav>
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="achivements.html">Achievements</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+<main>
+<!-- Flip Card -->
+  <div class="flip-card" id="flipCard">
+    <div class="flip-card-inner">
+
+      <!-- Front Side -->
+      <div class="flip-card-front">
+        <div class="text">
+          <h1>Building Smarter Systems with Smarter Code.</h1>
+        <p>Hi, I'm Macklin — a final-year B.Tech student in AI & Data Science. I specialize in building intelligent tools, crafting clean web experiences, and solving real-world problems through creativity and code.</p>
+        <div class="dynamic-skill" id="skillText"></div>
+          <div class="buttons">
+            <button onclick="flipCard()">Know More</button>
+          </div>
+        </div>
+        <img src="Myimage.jpg" alt="Profile" class="profile-img" />
+      </div>
+
+      <!-- Back Side -->
+      <div class="flip-card-back">
+        <div class="text">
+          <div class="skills-container">
+            <div class="skills-column">
+              <h2>Technical Skills</h2>
+              <ul>
+                <li>Java</li>
+                <li>Python</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>SQL & DBMS</li>
+                <li>Figma - UI & UX</li>
+                <li>Blender - 3D modelling</li>
+              </ul>
+            </div>
+            <div class="skills-column">
+              <h2>Soft Skills</h2>
+              <ul>
+                <li>Communication</li>
+                <li>Team Leadership</li>
+                <li>Problem-Solving</li>
+                <li>Creativity</li>
+              </ul>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="back-button" onclick="flipCard()"><span>Back</span></button>
+
+            <!-- <button >Back</button> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+  
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-container">
+      <p>&copy; 2025 Macklin Enico Salex</p>
+     
+      <div class="footer-links">
+        <a href="mailto:macklinenicosalex@gmail.com" target="_blank">Email</a>
+        <a href="https://www.linkedin.com/in/macklin-p-7b9a71267/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Macklin20" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Burger menu toggle
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      burger.classList.toggle('toggle');
+    });
+
+    // Dynamic typing effect
+    const roles = ["Web Developer 💻", "Java Developer ☕", "UI/UX Designer 🎨", "Database Architect 🗃️"];
+    const skillText = document.getElementById("skillText");
+    let index = 0, char = 0, typing = true;
+
+    function typeLoop() {
+      if (typing) {
+        if (char < roles[index].length) {
+          skillText.textContent += roles[index].charAt(char++);
+          setTimeout(typeLoop, 100);
+        } else {
+          typing = false;
+          setTimeout(typeLoop, 1500);
+        }
+      } else {
+        if (char > 0) {
+          skillText.textContent = roles[index].substring(0, --char);
+          setTimeout(typeLoop, 40);
+        } else {
+          typing = true;
+          index = (index + 1) % roles.length;
+          setTimeout(typeLoop, 300);
+        }
+      }
+    }
+    typeLoop();
+
+    // Flip card
+    function flipCard() {
+      document.querySelector('.flip-card').classList.toggle('flipped');
+    }
+
+    
+  function flipCard() {
+    const card = document.getElementById('flipCard');
+    card.classList.toggle('flipped');
+
+<<<<<<< HEAD
+    // Scroll to top smoothly after flipping
+    if (card.classList.contains('flipped')) {
+      setTimeout(() => {
+        card.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 300); // Wait for flip animation
+=======
+        </ul>
+      </div>
+      <div class="skills-column">
+        <h2>Soft Skills</h2>
+        <ul>
+          <li>Communication</li>
+          <li>Team Leadership</li>
+          <li>Problem-Solving</li>
+          <li>Creativity</li>
+        </ul>
+      </div>
+    </div>
+    <div class="buttons">
+      <button onclick="flipCard()">Back</button>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<footer id="contactdetails">
+  <div class="footer-container">
+    <p>&copy; 2025 Macklin Enico Salex</p>
+    <div class="footer-links">
+      <a href="mailto:macklinenicosalex@gmail.com" target="_blank">Email</a>
+      <a href="https://www.linkedin.com/in/macklin-p-7b9a71267/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Macklin20" target="_blank">GitHub</a>
+      
+    </div>
+  </div>
+</footer>
+
+<script>
+  const roles = ["Web Developer 💻","Java Developer ☕", "UI/UX Designer 🎨", "Database Architect 🗃️"];
+  const skillText = document.getElementById("skillText");
+  let index = 0;
+  let char = 0;
+  let typing = true;
+
+  function typeLoop() {
+    if (typing) {
+      if (char < roles[index].length) {
+        skillText.textContent += roles[index].charAt(char);
+        char++;
+        setTimeout(typeLoop, 100);
+      } else {
+        typing = false;
+        setTimeout(typeLoop, 1500);
+      }
+    } else {
+      if (char > 0) {
+        skillText.textContent = roles[index].substring(0, char - 1);
+        char--;
+        setTimeout(typeLoop, 40);
+      } else {
+        typing = true;
+        index = (index + 1) % roles.length;
+        setTimeout(typeLoop, 300);
+      }
+>>>>>>> 2742cab4a5781c49b969a8916c92bf088f58d917
+    }
+  }
+
+
+  </script>
+
+</body>
+</html>

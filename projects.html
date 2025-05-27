@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects - Macklin Enico Salex</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .projects-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(106, 13, 173, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      color: #6a0dad;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .project-card a {
+      margin-top: 12px;
+      display: inline-block;
+      color: #530da8;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+   <a href="index.html" style="text-decoration: none;" class="logo">Macklin Enico Salex</a>
+
+    <nav>
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="achivements.html">Achievements</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section class="projects-section">
+ 
+    <!-- QUESTHIVE -->
+  <div class="project-card">
+    <h3>Automated Question Generator using Gen AI - QuestHive</h3>
+    <p>A web-based tool that generates multiple-choice and coding questions from user-provided text using Gen AI with Lemma and Groq API.
+It combines Python-driven AI logic with PHP and phpMyAdmin for backend processing and data storage.
+The frontend is built using HTML, CSS, JavaScript, Bootstrap, and jQuery for a responsive and interactive user experience.</p>
+    <!-- <p>This project takes user input and generates Multiple Choice Questions (MCQs) and coding questions using natural language processing techniques.</p> -->
+    <a href="https://github.com/Macklin20/Automated-Question-Generator-using-Gen-AI---QuestHive" target="_blank">🔗 GitHub Repo</a>
+  </div>
+
+
+  <!-- GREEN GROCERY -->
+  <div class="project-card">
+    <h3>Green Grocery - Connecting farmers with Local markets
+    </h3>
+    <p>Green Grocery is a MERN stack-based digital platform that connects farmers directly with vendors, eliminating middlemen and improving market access. It features multilingual support, voice input, real-time chat, and secure payments via Razorpay to enhance usability for rural users. The platform boosts digital engagement, simplifies agri-commerce, and supports inclusive growth in the agricultural sector.
+</p>
+    <!-- <p>Responsive personal portfolio built with HTML, CSS, and JavaScript to showcase my achievements, resume, and projects.</p> -->
+    <a href="https://github.com/Macklin20/Green-Grocery" target="_blank">🔗 GitHub Repo</a>
+  </div>
+
+
+  <!-- ILLUSTRN -->
+  <div class="project-card">
+    <h3>Smart Education Platform with AR - Illustrn</h3>
+    <p>An intelligent education platform that enhances learning through interactive AR experiences using Meta Spark.
+QR codes are integrated for easy content access and tracking, offering a seamless bridge between physical and digital learning.
+Built with HTML, CSS, and JavaScript to ensure a responsive, engaging user interface for students and educators alike.</p>
+    <!-- <p>An immersive education platform built using augmented reality to enable interactive learning experiences for students.</p> -->
+    <a href="https://github.com/Macklin20/Illustrn" target="_blank">🔗 GitHub Repo</a>
+  </div>
+
+  <!-- CHATBOT GROQ -->
+  <div class="project-card">
+    <h3>ChatBot using Groq AI</h3>
+    <p>An interactive AI chatbot built using the GROQ API to generate human-like responses in real time.
+Integrates Python for backend logic and conversational AI, delivering intelligent and dynamic chat experiences.
+Ideal for support systems or educational tools. </p>
+
+    <a href="https://github.com/Macklin20/Chatbot-using-GROQ" target="_blank">🔗 GitHub Repo</a>
+  </div>
+
+
+  <!-- ANDROID PLAYSTORE ANALYSIS -->
+  <div class="project-card">
+    <h3>Android Playstore Analysis using Machine Learning</h3>
+    <p>This project analyzes data from the Android Play Store using machine learning algorithms to uncover trends and performance insights.
+Python, along with libraries like Matplotlib and Seaborn, was used for data preprocessing, visualization, and model evaluation.
+It highlights patterns in app ratings, installs, and categories to support data-driven decisions. </p>
+
+    <a href="https://github.com/Macklin20/Android-play-store-data-analysis" target="_blank">🔗 GitHub Repo</a>
+  </div>
+
+ 
+
+</section>
+<script>// Burger menu toggle
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      burger.classList.toggle('toggle');
+    });</script>
+</body>
+</html>
